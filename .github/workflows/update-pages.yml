@@ -81,14 +81,14 @@ jobs:
         echo "Final target branch: $TARGET_BRANCH"
 
     - name: Checkout repository
-      uses: actions/checkout@v6
+      uses: actions/checkout@v4
       with:
         ref: ${{ steps.target-branch.outputs.target_branch }}
         token: ${{ github.token }}
         fetch-depth: 0
 
     - name: Set up Python
-      uses: actions/setup-python@v6
+      uses: actions/setup-python@v4
       with:
         python-version: "3.12"
 
@@ -495,7 +495,7 @@ jobs:
         echo "📋 File validation complete"
 
     - name: Upload Pages artifact
-      uses: actions/upload-pages-artifact@v5
+      uses: actions/upload-pages-artifact@v3
       with:
         path: ./
 
@@ -510,4 +510,4 @@ jobs:
     steps:
     - name: Deploy to GitHub Pages
       id: deployment
-      uses: actions/deploy-pages@v5
+      uses: actions/deploy-pages@v4
